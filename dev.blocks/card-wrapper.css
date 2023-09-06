@@ -1,0 +1,11 @@
+/* These breakpoints match with those of Bootstrap.*/
+.card-wrapper {
+  background-image: url("../design/mobile-design.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 1400px) {
+  .card-wrapper {
+    background-image: url("../design/desktop-design.jpg");
+  }
+}
