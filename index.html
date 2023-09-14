@@ -3,27 +3,49 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Base Apparel coming soon page</title>
 
-  <link rel="stylesheet" href="./bundles/styles.css">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
-<body class="page">
-  <div class="card-wrapper">
-    <div class="card">
-      We're coming soon
+<body>
+  <main class="container-grid">
 
-      Hello fellow shoppers! We're currently building our new fashion store.
-      Add your email below to stay up-to-date with announcements and our launch deals.
+    <img class="logo" src="./images/logo.svg" alt="Base Apparel logo" width="158" height="33">
 
-      Email Address
+    <picture class="hero-area">
+      <source srcset="./images/hero-desktop.jpg" media="(min-width: 768px)" width="610" height="800">
+      <img class="hero-area__img" src="./images/hero-mobile.jpg" alt="Photo of a female clothing model" width="375"
+        height="250">
+    </picture>
+
+    <div class="txt-area">
+      <p class="headline__start">WE'RE</p>
+      <h1 class="headline__end">COMING SOON</h1>
+
+      <p class="copy">Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.</p>
+
+      <form class="email-submit-row" action="#">
+          <input class="email-submit-row__input" type="email" placeholder="Email Address">
+          <button class="email-submit-row__btn" type="submit">
+            <img class="email-submit-row__btn-img" src="./images/icon-arrow.svg" alt="Arrow icon" width="12" height="20">
+          </button>
+      </form>
     </div>
-  </div>
+
+  </main>
 
   <!-- <footer>
     <p class="attribution">
