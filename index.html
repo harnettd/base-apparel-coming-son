@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
 
   <!-- displays site properly based on user's device -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,35 +16,47 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
+  <!-- Local stylesheet -->
   <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-  <main class="container-grid">
 
-    <img class="logo" src="./images/logo.svg" alt="Base Apparel logo" width="158" height="33">
+  <main class="container-grid-wrapper">
+    <div class="container-grid">
 
-    <picture class="hero-area">
-      <source srcset="./images/hero-desktop.jpg" media="(min-width: 768px)" width="610" height="800">
-      <img class="hero-area__img" src="./images/hero-mobile.jpg" alt="Photo of a female clothing model" width="375"
-        height="250">
-    </picture>
+      <img class="logo" src="./images/logo.svg" alt="Base Apparel logo" width="158" height="33">
 
-    <div class="txt-area">
-      <p class="headline__start">WE'RE</p>
-      <h1 class="headline__end">COMING SOON</h1>
+      <picture class="hero-area">
+        <source srcset="./images/hero-desktop.jpg" media="(min-width: 1200px)" width="610" height="800">
+        <img class="hero-area__img" src="./images/hero-mobile.jpg" alt="Photo of a female clothing model" width="375"
+          height="250">
+      </picture>
 
-      <p class="copy">Hello fellow shoppers! We're currently building our new fashion store.
-        Add your email below to stay up-to-date with announcements and our launch deals.</p>
+      <div class="txt-area">
+        <div class="txt-container">
+          <p class="headline__start">WE'RE</p>
+          <h1 class="headline__end">COMING SOON</h1>
 
-      <form class="email-submit-row" action="#">
-          <input class="email-submit-row__input" type="email" placeholder="Email Address">
-          <button class="email-submit-row__btn" type="submit">
-            <img class="email-submit-row__btn-img" src="./images/icon-arrow.svg" alt="Arrow icon" width="12" height="20">
-          </button>
-      </form>
+          <p class="copy">Hello fellow shoppers! We're currently building our new fashion store.
+            Add your email below to stay up-to-date with announcements and our launch deals.</p>
+
+          <form class="email-form" action="#">
+            <div class="email-form__flex-row">
+              <input class="email-form__input" type="email" placeholder="Email Address">
+              <img class="email-form__err-icon" src="./images/icon-error.svg" alt="A red exclamation mark" width="24" height="24">
+              <button class="email-form__btn" type="submit">
+                <img class="email-form__btn-img" src="./images/icon-arrow.svg" alt="Arrow icon" width="12" height="20">
+              </button>
+            </div>
+            <p class="email-form__err-msg">Please provide a valid email</p>
+          </form>
+
+        </div>
+      </div>
     </div>
 
+    </div>
   </main>
 
   <!-- <footer>

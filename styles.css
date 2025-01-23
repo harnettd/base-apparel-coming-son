@@ -1,46 +1,54 @@
-html {
-  font-size: 62.5%;
+* > * {
+  box-sizing: border-box;
+  margin-top: 0;
 }
 
-* > * {
-  margin-top: 0;
+html {
+  font-size: 62.5%;
 }
 
 body {
   margin: 0;
 }
 
+.container-grid-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .container-grid {
   display: grid;
   grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr;
   min-width: 37.5rem;
-  width: 100%;
+  max-width: 768px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .container-grid {
     grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr 42.4%;
+    grid-template-columns: 1fr minmax(36%, 42.4%);
+    max-width: none;
     max-height: 80rem;
   }
 }
 
 .logo {
+  box-sizing: content-box;
   display: block;
   height: auto;
-  margin: 3rem 3rem 3rem 3rem;
+  padding: 3rem;
   width: 10rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .logo {
     grid-column: 1/2;
     grid-row: 1/2;
-    margin: 6.5rem 3rem 3rem 16.4rem;
+    padding: 6.5rem 0 6.5rem 16.4rem;
     width: 16rem;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .hero-area {
     grid-column: 2/3;
     grid-row: 1/3;
@@ -52,23 +60,29 @@ body {
   height: auto;
   width: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .hero-area__img {
-    max-height: 80rem;
-    object-fit: contain;
+    object-fit: cover;
     object-position: right top;
   }
 }
 
 .txt-area {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-start;
   padding: 0 3.1rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .txt-area {
     grid-column: 1/2;
     grid-row: 2/3;
-    padding: 0 22rem 0 16.6rem;
+    padding: 12rem 0 0 16.6rem;
   }
+}
+
+.txt-container {
+  max-width: 43rem;
 }
 
 .headline__start {
@@ -79,13 +93,13 @@ body {
   margin: 5.5rem auto -0.6rem;
   text-align: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .headline__start {
     font-family: "Josefin Sans", sans-serif;
     font-size: 6.3rem;
     font-weight: 300;
     letter-spacing: 1.75rem;
-    margin: 10rem auto -0.6rem;
+    margin: 0 0 -0.6rem;
     text-align: left;
   }
 }
@@ -99,7 +113,7 @@ body {
   margin-bottom: 1.6rem;
   text-align: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .headline__end {
     font-family: "Josefin Sans", sans-serif;
     font-size: 6.5rem;
@@ -120,7 +134,7 @@ body {
   margin-bottom: 3.1rem;
   text-align: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .copy {
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.5rem;
@@ -129,60 +143,74 @@ body {
     line-height: 1.9;
     margin-bottom: 3.9rem;
     text-align: left;
+    max-width: 43rem;
   }
 }
 
-.email-submit-row {
-  align-items: center;
-  border: 0.1rem solid purple;
-  border-radius: 3rem;
+.email-form__flex-row {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5.4rem;
+  border: 0.2rem solid purple;
+  border-radius: 3rem;
   overflow: hidden;
 }
-.email-submit-row__input {
+.email-form__input {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
   border: none;
-  padding: 1.7rem 1.7rem 1.7rem 2.5rem;
 }
-@media screen and (min-width: 768px) {
-  .email-submit-row__input {
+@media screen and (min-width: 1200px) {
+  .email-form__input {
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
     padding: 2rem 1.7rem 2rem 2.5rem;
   }
 }
-.email-submit-row__btn {
-  align-items: center;
-  border-radius: 3rem;
-  display: flex;
-  height: 4.7rem;
-  justify-content: center;
-  width: 20%;
+.email-form__err-icon {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
 }
-@media screen and (min-width: 768px) {
-  .email-submit-row__btn {
+.email-form__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+  border-radius: 3rem;
+}
+@media screen and (min-width: 1200px) {
+  .email-form__btn {
     border-radius: 3rem;
     height: 5.5rem;
     width: 23%;
   }
 }
-.email-submit-row__btn-img {
+.email-form__btn-img {
   display: block;
   width: auto;
   height: 2rem;
 }
-@media screen and (min-width: 768px) {
-  .email-submit-row__btn-img {
+@media screen and (min-width: 1200px) {
+  .email-form__btn-img {
     height: 2rem;
   }
 }
+.email-form__err-msg {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
 
 body {
-  background-image: url("./design/desktop-design.jpg");
   background-repeat: no-repeat;
   background-position: left top;
   background-size: contain;

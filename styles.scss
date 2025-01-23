@@ -1,12 +1,20 @@
-$breakpoint: 768px;
+// 1. Settings
 
+// Bootstrap breakpoints
+$medium: 768px;
+$large: 992px;
+$x-large: 1200px;
+$xx-large: 1400px;
+$breakpoint: $x-large;
 
-// Fonts
-
+// Font family and weights
 $font-stack: 'Josefin Sans', sans-serif;
 $light: 300;
 $regular: 400;
 $semi-bold: 600;
+
+
+// 2. Tools
 
 @mixin font($size, $weight) {
     font: {
@@ -17,45 +25,62 @@ $semi-bold: 600;
 }
 
 
-// Styling
+// 3. Generic
 
-html {
-    font-size: 62.5%;
+// CSS reset
+*>* {
+    box-sizing: border-box;
+    margin-top: 0;
 }
 
-* > * {
-    // box-sizing: border-box;
-    margin-top: 0;
+// Normalizing rules
+html {
+    font-size: 62.5%;
 }
 
 body {
     margin: 0;
 }
 
+
+// 4. Elements 
+
+.container-grid-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .container-grid {
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-template-columns: 1fr; 
+    // grid-template-columns: 1fr;
+
     min-width: 37.5rem;
-    width: 100%;
+    max-width: $medium;
 
     @media screen and (min-width: $breakpoint) {
         grid-template-rows: auto 1fr;
-        grid-template-columns: 1fr 42.4%;
+        grid-template-columns: 1fr minmax(36%, 42.4%);
+
+        max-width: none;
         max-height: 80rem;
     }
 }
 
 .logo {
+    box-sizing: content-box;
     display: block;
     height: auto;
-    margin: 3rem 3rem 3rem 3rem;
+    // margin: 3rem 3rem 3rem 3rem;
+    padding: 3rem;
     width: 10rem;
 
     @media screen and (min-width: $breakpoint) {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
-        margin: 6.5rem 3rem 3rem 16.4rem;
+        // margin: 6.5rem 0 3rem 16.4rem;
+        padding: 6.5rem 0 6.5rem 16.4rem;
         width: 16rem;
     }
 }
@@ -74,20 +99,29 @@ body {
     width: 100%;
 
     @media screen and (min-width: $breakpoint) {
-        max-height: 80rem;
-        object-fit: contain;
+        // max-height: 80rem;
+        // min-width: 100%;
+        object-fit: cover;
         object-position: right top;
+        // width: auto;
     }
 }
 
 .txt-area {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
     padding: 0 3.1rem;
 
     @media screen and (min-width: $breakpoint) {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-        padding: 0 22rem 0 16.6rem;
+        padding: 12rem 0 0 16.6rem;
     }
+}
+
+.txt-container {
+    max-width: 43rem;
 }
 
 .headline__start {
@@ -99,7 +133,7 @@ body {
     @media screen and (min-width: $breakpoint) {
         @include font(6.3rem, $light);
         letter-spacing: 1.75rem;
-        margin: 10rem auto -0.6rem;
+        margin: 0 0 -0.6rem;
         text-align: left;
     }
 }
@@ -133,35 +167,54 @@ body {
         line-height: 1.9;
         margin-bottom: 3.9rem;
         text-align: left;
+        max-width: 43rem;
     }
 }
 
-.email-submit-row {
-    align-items: center;
-    border: 0.1rem solid purple;
-    border-radius: 3rem;
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
+.email-form {
+
+    &__flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        height: 5.4rem;
+
+        border: 0.2rem solid purple;
+        border-radius: 3rem;
+
+        overflow: hidden;
+    }
 
     &__input {
         @include font(1.25rem, $regular);
         border: none;
-        padding: 1.7rem 1.7rem 1.7rem 2.5rem;
+        // padding: 1.7rem 1.7rem 1.7rem 2.5rem;
 
         @media screen and (min-width: $breakpoint) {
             @include font(1.25rem, $regular);
             padding: 2rem 1.7rem 2rem 2.5rem;
         }
     }
-    
+
+    &__err-icon {
+        display: block;
+
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
     &__btn {
-        align-items: center;
-        border-radius: 3rem;
         display: flex;
-        height: 4.7rem;
         justify-content: center;
+        align-items: center;
+        
         width: 20%;
+        height: 100%;
+        
+        border-radius: 3rem;
 
         @media screen and (min-width: $breakpoint) {
             border-radius: 3rem;
@@ -169,9 +222,10 @@ body {
             width: 23%;
         }
     }
-    
+
     &__btn-img {
         display: block;
+        
         width: auto;
         height: 2rem;
 
@@ -179,13 +233,20 @@ body {
             height: 2rem;
         }
     }
+
+    &__err-msg {
+        margin-top: 1rem;
+        margin-left: 2rem;
+
+        @include font(1.2rem, $regular)
+    }
 }
 
 // Development redefinition level
 
 body {
     background: {
-        image: url("./design/desktop-design.jpg");
+        // image: url("./design/desktop-design.jpg");
         repeat: no-repeat;
         position: left top;
         size: contain;
