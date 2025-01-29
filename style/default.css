@@ -11,59 +11,63 @@ body {
   margin: 0;
 }
 
-.container-grid-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
 .container-grid {
   display: grid;
   grid-template-rows: auto auto auto;
   min-width: 37.5rem;
-  max-width: 768px;
+  max-width: 592px;
 }
 @media screen and (min-width: 1200px) {
   .container-grid {
     grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr minmax(36%, 42.4%);
-    max-width: none;
+    grid-template-columns: 1fr auto;
+    column-gap: 26rem;
+    margin-left: 10rem;
+    max-width: 144rem;
     max-height: 80rem;
+  }
+}
+.container-grid__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 1200px) {
+  .container-grid__wrapper {
+    align-items: center;
+    min-height: 100vh;
   }
 }
 
 .logo {
-  box-sizing: content-box;
   display: block;
+  margin: 3rem;
+  max-width: 15.8rem;
   height: auto;
-  padding: 3rem;
-  width: 10rem;
 }
 @media screen and (min-width: 1200px) {
   .logo {
+    padding: 6.5rem 0 6.5rem 0;
+    max-width: 16rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .logo__wrapper {
     grid-column: 1/2;
     grid-row: 1/2;
-    padding: 6.5rem 0 6.5rem 16.4rem;
-    width: 16rem;
   }
 }
 
+.hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 @media screen and (min-width: 1200px) {
-  .hero-area {
+  .hero-img__wrapper {
     grid-column: 2/3;
     grid-row: 1/3;
-  }
-}
-
-.hero-area__img {
-  display: block;
-  height: auto;
-  width: 100%;
-}
-@media screen and (min-width: 1200px) {
-  .hero-area__img {
-    object-fit: cover;
-    object-position: right top;
   }
 }
 
@@ -77,12 +81,8 @@ body {
   .txt-area {
     grid-column: 1/2;
     grid-row: 2/3;
-    padding: 12rem 0 0 16.6rem;
+    padding: 0;
   }
-}
-
-.txt-container {
-  max-width: 43rem;
 }
 
 .headline__start {
@@ -143,7 +143,6 @@ body {
     line-height: 1.9;
     margin-bottom: 3.9rem;
     text-align: left;
-    max-width: 43rem;
   }
 }
 
@@ -216,4 +215,4 @@ body {
   background-size: contain;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=default.css.map */

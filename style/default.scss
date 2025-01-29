@@ -1,0 +1,259 @@
+// 1. Settings
+
+// Bootstrap breakpoints
+$small: 592px;
+$medium: 768px;
+$large: 992px;
+$x-large: 1200px;
+$xx-large: 1400px;
+$breakpoint: $x-large;
+
+// Font family and weights
+$font-stack: "Josefin Sans", sans-serif;
+$light: 300;
+$regular: 400;
+$semi-bold: 600;
+
+// 2. Tools
+
+@mixin font($size, $weight) {
+  font: {
+    family: $font-stack;
+    size: $size;
+    weight: $weight;
+  }
+}
+
+// 3. Generic
+
+// CSS reset
+* > * {
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+// Normalizing rules
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+}
+
+// 4. Elements
+
+.container-grid {
+  display: grid;
+  grid-template-rows: auto auto auto;
+
+  min-width: 37.5rem;
+  max-width: $small;
+
+  @media screen and (min-width: $breakpoint) {
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr auto;
+    column-gap: 26rem;
+
+    margin-left: 10rem;
+    max-width: 144rem;
+    max-height: 80rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media screen and (min-width: $breakpoint) {
+      align-items: center;
+      min-height: 100vh;
+    }
+  }
+}
+
+.logo {
+  display: block;
+  margin: 3rem;
+  max-width: 15.8rem;
+  height: auto;
+
+  @media screen and (min-width: $breakpoint) {
+    padding: 6.5rem 0 6.5rem 0;
+    max-width: 16rem;
+  }
+
+  &__wrapper {
+    @media screen and (min-width: $breakpoint) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+  }
+}
+
+.hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  @media screen and (min-width: $breakpoint) {
+    // margin-left: 2rem;
+    // max-height: 80rem;
+    // min-width: 100%;
+    // object-fit: cover;
+    // object-position: right top;
+    // width: auto;
+  }
+
+  &__wrapper {
+    @media screen and (min-width: $breakpoint) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+    }
+  }
+}
+
+.txt-area {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 3.1rem;
+
+  @media screen and (min-width: $breakpoint) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    padding: 0;
+  }
+}
+
+.txt-container {
+  // max-width: 43rem;
+}
+
+.headline__start {
+  @include font(4.3rem, $light);
+  letter-spacing: 0.75rem;
+  margin: 5.5rem auto -0.6rem;
+  text-align: center;
+
+  @media screen and (min-width: $breakpoint) {
+    @include font(6.3rem, $light);
+    letter-spacing: 1.75rem;
+    margin: 0 0 -0.6rem;
+    text-align: left;
+  }
+}
+
+.headline__end {
+  @include font(4rem, $semi-bold);
+  letter-spacing: 1.2rem;
+  line-height: 1.09;
+  margin-bottom: 1.6rem;
+  text-align: center;
+
+  @media screen and (min-width: $breakpoint) {
+    @include font(6.5rem, $semi-bold);
+    letter-spacing: 1.6rem;
+    line-height: 1.09;
+    margin-bottom: 1.8rem;
+    text-align: left;
+  }
+}
+
+.copy {
+  @include font(1.25rem, $regular);
+  letter-spacing: 0.1rem;
+  line-height: 1.75;
+  margin-bottom: 3.1rem;
+  text-align: center;
+
+  @media screen and (min-width: $breakpoint) {
+    @include font(1.5rem, $regular);
+    letter-spacing: 0.05rem;
+    line-height: 1.9;
+    margin-bottom: 3.9rem;
+    text-align: left;
+  }
+}
+
+.email-form {
+  &__flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 5.4rem;
+
+    border: 0.2rem solid purple;
+    border-radius: 3rem;
+
+    overflow: hidden;
+  }
+
+  &__input {
+    @include font(1.25rem, $regular);
+    border: none;
+    // padding: 1.7rem 1.7rem 1.7rem 2.5rem;
+
+    @media screen and (min-width: $breakpoint) {
+      @include font(1.25rem, $regular);
+      padding: 2rem 1.7rem 2rem 2.5rem;
+    }
+  }
+
+  &__err-icon {
+    display: block;
+
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20%;
+    height: 100%;
+
+    border-radius: 3rem;
+
+    @media screen and (min-width: $breakpoint) {
+      border-radius: 3rem;
+      height: 5.5rem;
+      width: 23%;
+    }
+  }
+
+  &__btn-img {
+    display: block;
+
+    width: auto;
+    height: 2rem;
+
+    @media screen and (min-width: $breakpoint) {
+      height: 2rem;
+    }
+  }
+
+  &__err-msg {
+    margin-top: 1rem;
+    margin-left: 2rem;
+
+    @include font(1.2rem, $regular);
+  }
+}
+
+// Development redefinition level
+
+body {
+  background: {
+    // image: url("./design/desktop-design.jpg");
+    repeat: no-repeat;
+    position: left top;
+    size: contain;
+  }
+}
