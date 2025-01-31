@@ -52,12 +52,13 @@ body {
   max-width: $small;
 
   @media screen and (min-width: $breakpoint) {
-    grid-template-rows: auto auto;
-    grid-template-columns: auto minmax(min-content, max-content);
+    grid-template-rows: 24rem 1fr;
+    grid-template-columns: 1fr minmax(min-content, max-content);
     column-gap: 7rem;
 
     width: 144rem;
     max-width: none;
+    height: 80rem;
   }
 
   &__wrapper {
@@ -81,7 +82,7 @@ body {
   height: auto;
 
   @media screen and (min-width: $breakpoint) {
-    margin: 3rem 0;
+    margin: 6rem 0 0 0;
     width: 36rem;
   }
 
@@ -91,7 +92,6 @@ body {
       grid-row: 1 / 2;
 
       margin: 0 auto;
-      padding: 6.5rem 0;
       width: 43rem;
     }
   }
@@ -105,6 +105,7 @@ body {
   height: auto;
 
   @media screen and (min-width: $breakpoint) {
+    margin-bottom: 0;
     width: 61rem;
   }
 
@@ -141,9 +142,10 @@ body {
   text-align: center;
 
   @media screen and (min-width: $breakpoint) {
+    margin-bottom: -0.6rem;
+
     @include font(6.3rem, $light);
     letter-spacing: 1.75rem;
-    margin: 0 0 -0.6rem;
     text-align: left;
   }
 }
@@ -157,10 +159,11 @@ body {
   text-align: center;
 
   @media screen and (min-width: $breakpoint) {
+    margin-bottom: 1.8rem;
+
     @include font(6.5rem, $semi-bold);
     letter-spacing: 1.6rem;
     line-height: 1.09;
-    margin-bottom: 1.8rem;
     text-align: left;
   }
 }
@@ -174,10 +177,11 @@ body {
   text-align: center;
 
   @media screen and (min-width: $breakpoint) {
+    margin-bottom: 3.9rem; 
+
     @include font(1.5rem, $regular);
     letter-spacing: 0.05rem;
     line-height: 1.9;
-    margin-bottom: 3.9rem;
     text-align: left;
   }
 }
