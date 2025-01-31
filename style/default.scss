@@ -1,6 +1,7 @@
 // 1. Settings
 
 // Bootstrap breakpoints
+$x-small: 375px;
 $small: 592px;
 $medium: 768px;
 $large: 992px;
@@ -45,19 +46,20 @@ body {
 
 .container-grid {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: 100% 100% 100%;
 
   min-width: 37.5rem;
   max-width: $small;
 
   @media screen and (min-width: $breakpoint) {
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr auto;
-    column-gap: 26rem;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto minmax(min-content, max-content);
+    column-gap: 7rem;
 
-    margin-left: 10rem;
-    max-width: 144rem;
-    max-height: 80rem;
+    // margin-left: 10rem;
+    max-width: none;
+    width: 144rem;
+    height: 80rem;
   }
 
   &__wrapper {
@@ -80,14 +82,18 @@ body {
   height: auto;
 
   @media screen and (min-width: $breakpoint) {
-    padding: 6.5rem 0 6.5rem 0;
-    max-width: 16rem;
+    margin: 3rem 0;
+    width: 36rem;
   }
 
   &__wrapper {
     @media screen and (min-width: $breakpoint) {
       grid-column: 1 / 2;
       grid-row: 1 / 2;
+
+      margin: 0 auto;
+      padding: 6.5rem 0;
+      width: 43rem;
     }
   }
 }
@@ -103,7 +109,7 @@ body {
     // min-width: 100%;
     // object-fit: cover;
     // object-position: right top;
-    // width: auto;
+    width: 61rem;
   }
 
   &__wrapper {
@@ -115,20 +121,21 @@ body {
 }
 
 .txt-area {
-  align-items: flex-start;
-  display: flex;
-  justify-content: flex-start;
-  padding: 0 3.1rem;
+  // align-items: flex-start;
+  // display: flex;
+  // justify-content: flex-start;
+  // padding: 0 3.1rem;
 
   @media screen and (min-width: $breakpoint) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    padding: 0;
+    // padding: 0;
   }
 }
 
 .txt-container {
-  // max-width: 43rem;
+  margin: 0 auto;
+  max-width: 43rem;
 }
 
 .headline__start {
