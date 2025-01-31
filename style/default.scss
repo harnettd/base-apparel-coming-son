@@ -48,7 +48,7 @@ body {
   display: grid;
   grid-template-rows: 100% 100% 100%;
 
-  min-width: 37.5rem;
+  min-width: $x-small;
   max-width: $small;
 
   @media screen and (min-width: $breakpoint) {
@@ -56,10 +56,8 @@ body {
     grid-template-columns: auto minmax(min-content, max-content);
     column-gap: 7rem;
 
-    // margin-left: 10rem;
-    max-width: none;
     width: 144rem;
-    height: 80rem;
+    max-width: none;
   }
 
   &__wrapper {
@@ -77,7 +75,8 @@ body {
 
 .logo {
   display: block;
-  margin: 3rem;
+
+  margin: 3rem 0 3rem 3rem;
   max-width: 15.8rem;
   height: auto;
 
@@ -100,15 +99,12 @@ body {
 
 .hero-img {
   display: block;
+
+  margin-bottom: 5.5rem;
   width: 100%;
   height: auto;
 
   @media screen and (min-width: $breakpoint) {
-    // margin-left: 2rem;
-    // max-height: 80rem;
-    // min-width: 100%;
-    // object-fit: cover;
-    // object-position: right top;
     width: 61rem;
   }
 
@@ -121,27 +117,27 @@ body {
 }
 
 .txt-area {
-  // align-items: flex-start;
-  // display: flex;
-  // justify-content: flex-start;
-  // padding: 0 3.1rem;
-
   @media screen and (min-width: $breakpoint) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    // padding: 0;
   }
 }
 
 .txt-container {
-  margin: 0 auto;
-  max-width: 43rem;
+  padding: 0 3rem;
+
+  @media screen and (min-width: $breakpoint) {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 43rem;
+  }
 }
 
 .headline__start {
+  margin-bottom: -0.6rem;
+
   @include font(4.3rem, $light);
   letter-spacing: 0.75rem;
-  margin: 5.5rem auto -0.6rem;
   text-align: center;
 
   @media screen and (min-width: $breakpoint) {
@@ -153,10 +149,11 @@ body {
 }
 
 .headline__end {
+  margin-bottom: 2rem;
+
   @include font(4rem, $semi-bold);
   letter-spacing: 1.2rem;
   line-height: 1.09;
-  margin-bottom: 1.6rem;
   text-align: center;
 
   @media screen and (min-width: $breakpoint) {
@@ -169,10 +166,11 @@ body {
 }
 
 .copy {
+  margin-bottom: 3.1rem;
+
   @include font(1.25rem, $regular);
   letter-spacing: 0.1rem;
   line-height: 1.75;
-  margin-bottom: 3.1rem;
   text-align: center;
 
   @media screen and (min-width: $breakpoint) {
@@ -203,7 +201,7 @@ body {
   &__input {
     @include font(1.25rem, $regular);
     border: none;
-    // padding: 1.7rem 1.7rem 1.7rem 2.5rem;
+    padding: 1.7rem 1.7rem 1.7rem 2.5rem;
 
     @media screen and (min-width: $breakpoint) {
       @include font(1.25rem, $regular);
