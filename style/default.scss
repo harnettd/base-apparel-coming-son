@@ -187,53 +187,85 @@ body {
 }
 
 .email-form {
-  &__flex-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  // border: solid black 1px;
+  // padding: 2rem;
 
-    width: 100%;
-    height: 5.4rem;
-
-    border: 0.2rem solid purple;
+  &__flex-row-container {
+    position: relative;
+    // height: 5.5rem;
+    height: 6.2rem;
+    // border: solid 2px purple;
+    // border: solid 1px green;
     border-radius: 3rem;
-
     overflow: hidden;
   }
 
+  &__flex-row {
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    // align-items: center;
+
+    padding: 2.3rem 0 0 2rem;
+    width: 100%;
+    height: 100%;
+    // height: 5.4rem;
+
+    border: 1px solid purple;
+    border-radius: 3rem;
+
+    // overflow: hidden;
+  }
+
   &__input {
+    display: block;
+
     @include font(1.25rem, $regular);
     border: none;
-    padding: 1.7rem 1.7rem 1.7rem 2.5rem;
+    // padding: 1.7rem 1.7rem 1.7rem 2.5rem;
 
     @media screen and (min-width: $breakpoint) {
       @include font(1.25rem, $regular);
-      padding: 2rem 1.7rem 2rem 2.5rem;
+      // padding: 2rem 1.7rem 2rem 2.5rem;
+      // padding: 0 0 0 2rem;
+      width: 100%;
+      // height: 100%;
     }
   }
 
   &__err-icon {
-    display: block;
+    display: none;
+    // display: block;
 
-    width: 2.4rem;
-    height: 2.4rem;
+    // width: 2.4rem;
+    // height: 2.4rem;
   }
 
   &__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    // display: none;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 20%;
+    // width: 20%;
+    width: 6rem;
     height: 100%;
 
-    border-radius: 3rem;
+    border: none;
+    // border-radius: 3rem;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+
+    background-color: purple;
 
     @media screen and (min-width: $breakpoint) {
-      border-radius: 3rem;
-      height: 5.5rem;
-      width: 23%;
+      // border-radius: 3rem;
+      // height: 5.5rem;
+      width: 10rem;
     }
   }
 
