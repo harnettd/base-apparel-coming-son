@@ -18,6 +18,12 @@ const errIcon = document.querySelector("." + getBEClass(formBlock, errIconElemen
 const errMessage = document.querySelector("." + getBEClass(formBlock, errMessageElement));
 const submitButton = document.querySelector("." + getBEClass(formBlock, buttonElement));
 
+window.addEventListener("load", (event) => {
+  input.value = null;
+  errIcon.classList.remove(getBEMClass(formBlock, errIconElement, onErrModifier));
+  errMessage.classList.remove(getBEMClass(formBlock, errMessageElement, onErrModifier));
+});
+
 const isValidEmail = (email) => {
   return false;
 };
