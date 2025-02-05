@@ -177,7 +177,7 @@ body {
   text-align: center;
 
   @media screen and (min-width: $breakpoint) {
-    margin-bottom: 3.9rem; 
+    margin-bottom: 3.9rem;
 
     @include font(1.5rem, $regular);
     letter-spacing: 0.05rem;
@@ -234,8 +234,8 @@ body {
   }
 
   &__err-icon {
-    // display: none;
-    display: block;
+    display: none;
+    // display: block;
 
     position: absolute;
     top: 2rem;
@@ -248,6 +248,10 @@ body {
       top: 2rem;
       right: 11rem;
     }
+  }
+
+  &__err-icon--on-err {
+    display: block;
   }
 
   &__btn {
@@ -294,10 +298,16 @@ body {
   }
 
   &__err-msg {
+    visibility: hidden;
+
     margin-top: 1rem;
     margin-left: 2rem;
 
     @include font(1.2rem, $regular);
+  }
+
+  &__err-msg--on-err {
+    visibility: visible;
   }
 }
 

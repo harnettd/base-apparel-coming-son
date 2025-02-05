@@ -188,7 +188,7 @@ body {
   }
 }
 .email-form__err-icon {
-  display: block;
+  display: none;
   position: absolute;
   top: 2rem;
   right: 8rem;
@@ -200,6 +200,9 @@ body {
     top: 2rem;
     right: 11rem;
   }
+}
+.email-form__err-icon--on-err {
+  display: block;
 }
 .email-form__btn {
   position: absolute;
@@ -234,11 +237,15 @@ body {
   }
 }
 .email-form__err-msg {
+  visibility: hidden;
   margin-top: 1rem;
   margin-left: 2rem;
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
+}
+.email-form__err-msg--on-err {
+  visibility: visible;
 }
 
 body {

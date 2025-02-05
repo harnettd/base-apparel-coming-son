@@ -29,7 +29,7 @@ submitButton.addEventListener("click", (event) => {
     alert("Form data validated");
   } else {
     errIcon.classList.add(getBEMClass(formBlock, errIconElement, onErrModifier));
-    errMessage.classList.add(getBEClass(formBlock, errMessageElement, onErrModifier));
+    errMessage.classList.add(getBEMClass(formBlock, errMessageElement, onErrModifier));
     event.preventDefault();
   }
 });
