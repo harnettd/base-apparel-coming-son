@@ -190,7 +190,7 @@ body {
   // border: solid black 1px;
   // padding: 2rem;
 
-  &__flex-row-container {
+  &__row-container {
     position: relative;
     // height: 5.5rem;
     height: 6.2rem;
@@ -200,7 +200,7 @@ body {
     overflow: hidden;
   }
 
-  &__flex-row {
+  &__row {
     // display: flex;
     // flex-direction: row;
     // justify-content: space-between;
@@ -234,11 +234,20 @@ body {
   }
 
   &__err-icon {
-    display: none;
-    // display: block;
+    // display: none;
+    display: block;
 
-    // width: 2.4rem;
-    // height: 2.4rem;
+    position: absolute;
+    top: 2rem;
+    right: 8rem;
+
+    width: 2.4rem;
+    height: 2.4rem;
+
+    @media screen and (min-width: $breakpoint) {
+      top: 2rem;
+      right: 11rem;
+    }
   }
 
   &__btn {
@@ -252,7 +261,7 @@ body {
     align-items: center;
 
     // width: 20%;
-    width: 6rem;
+    width: 7rem;
     height: 100%;
 
     border: none;

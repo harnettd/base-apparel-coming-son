@@ -159,13 +159,13 @@ body {
   }
 }
 
-.email-form__flex-row-container {
+.email-form__row-container {
   position: relative;
   height: 6.2rem;
   border-radius: 3rem;
   overflow: hidden;
 }
-.email-form__flex-row {
+.email-form__row {
   padding: 2.3rem 0 0 2rem;
   width: 100%;
   height: 100%;
@@ -188,7 +188,18 @@ body {
   }
 }
 .email-form__err-icon {
-  display: none;
+  display: block;
+  position: absolute;
+  top: 2rem;
+  right: 8rem;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+@media screen and (min-width: 1200px) {
+  .email-form__err-icon {
+    top: 2rem;
+    right: 11rem;
+  }
 }
 .email-form__btn {
   position: absolute;
@@ -197,7 +208,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 6rem;
+  width: 7rem;
   height: 100%;
   border: none;
   border-top-left-radius: 3rem;
