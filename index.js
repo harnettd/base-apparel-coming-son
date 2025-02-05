@@ -24,8 +24,11 @@ window.addEventListener("load", (event) => {
   errMessage.classList.remove(getBEMClass(formBlock, errMessageElement, onErrModifier));
 });
 
+// Return true if email is a valid email address; false otherwise.
 const isValidEmail = (email) => {
-  return false;
+  const emailRegexp = /^\w+(\.\w+)*@\w+(\.\w+)*$/g;
+  return email.match(emailRegexp) ? true : false;
+
 };
 
 submitButton.addEventListener("click", (event) => {
