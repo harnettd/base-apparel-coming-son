@@ -278,6 +278,10 @@ body {
     }
   }
 
+  &__btn:hover {
+    cursor: pointer;
+  }
+
   &__btn-img {
     display: block;
 
