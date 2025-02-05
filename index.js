@@ -1,29 +1,35 @@
-const getBESelector = (block, element) => {
-  return `.${block}__${element}`;
+const getBEClass = (block, element) => {
+  return `${block}__${element}`;
 };
 
-const getBEMSelector = (block, element, modifier) => {
-  return `.${getBESelector(block, element)}--${modifier}`;
+const getBEMClass = (block, element, modifier) => {
+  return `${getBEClass(block, element)}--${modifier}`;
 };
 
-const form = "email-form";
+const formBlock = "email-form";
+const inputElement = "input";
+const errIconElement = "err-icon";
+const errMessageElement = "err-msg";
+const buttonElement = "btn";
+const onErrModifier = "on-err";
 
-const input = document.querySelector(getBESelector(form, "input"));
-const errIcon = document.querySelector(getBESelector(form, "err-icon"));
-const errMessage = document.querySelector(getBESelector(form, "err-msg"));
-const submitButton = document.querySelector(getBESelector(form, "btn"));
+const input = document.querySelector("." + getBEClass(formBlock, inputElement));
+const errIcon = document.querySelector("." + getBEClass(formBlock, errIconElement));
+const errMessage = document.querySelector("." + getBEClass(formBlock, errMessageElement));
+const submitButton = document.querySelector("." + getBEClass(formBlock, buttonElement));
 
 const isValidEmail = (email) => {
   return false;
 };
 
 submitButton.addEventListener("click", (event) => {
-  const email = submitButton.value;
+  const email = input.value;
   console.log(`email: ${email}`)
   if (isValidEmail(email)) {
-    alert("Good");
+    alert("Form data validated");
   } else {
-    alert("Bad");
+    errIcon.classList.add(getBEMClass(formBlock, errIconElement, onErrModifier));
+    errMessage.classList.add(getBEClass(formBlock, errMessageElement, onErrModifier));
     event.preventDefault();
   }
 });
