@@ -1,12 +1,8 @@
-// Return block__element class name.
-const getBEClass = (block, element) => {
-  return `${block}__${element}`;
-};
-
-// Return block__element--modifier class name.
-const getBEMClass = (block, element, modifier) => {
-  return `${getBEClass(block, element)}--${modifier}`;
-};
+// Return a class name in the BEM convention.
+const BEM = (block, element, modifier) => {
+  const BE = `${block}__${element}`;
+  return modifier ? `${BE}--${modifier}` : BE;
+}
 
 // blocks, elements, and modifiers.
 const formBlock = "email-form";
