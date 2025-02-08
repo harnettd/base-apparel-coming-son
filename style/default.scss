@@ -9,6 +9,11 @@ $x-large: 1200px;
 $xx-large: 1400px;
 $breakpoint: $x-large;
 
+// Colors
+$primary: hsl(0, 36%, 70%);
+$secondary: hsl(0, 6%, 24%);
+$danger: hsl(0, 93%, 68%);
+
 // Font family and weights
 $font-stack: "Josefin Sans", sans-serif;
 $light: 300;
@@ -31,6 +36,10 @@ $semi-bold: 600;
 * > * {
   box-sizing: border-box;
   margin-top: 0;
+}
+
+* > *:focus-visible {
+  outline: none;
 }
 
 // Normalizing rules
@@ -141,6 +150,8 @@ body {
   letter-spacing: 0.75rem;
   text-align: center;
 
+  color: $primary;
+
   @media screen and (min-width: $breakpoint) {
     margin-bottom: -0.6rem;
 
@@ -157,6 +168,8 @@ body {
   letter-spacing: 1.2rem;
   line-height: 1.09;
   text-align: center;
+
+  color: $secondary;
 
   @media screen and (min-width: $breakpoint) {
     margin-bottom: 1.8rem;
@@ -176,6 +189,8 @@ body {
   line-height: 1.75;
   text-align: center;
 
+  color: $primary;
+
   @media screen and (min-width: $breakpoint) {
     margin-bottom: 3.9rem;
 
@@ -194,27 +209,24 @@ body {
     position: relative;
     // height: 5.5rem;
     height: 6.2rem;
-    // border: solid 2px purple;
-    // border: solid 1px green;
     border-radius: 3rem;
     overflow: hidden;
   }
 
   &__row {
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-between;
-    // align-items: center;
-
     padding: 2.3rem 0 0 2rem;
     width: 100%;
     height: 100%;
     // height: 5.4rem;
 
-    border: 1px solid purple;
+    border: 1px solid hsl(0deg 36% 70% / 50%);
     border-radius: 3rem;
 
     // overflow: hidden;
+  }
+
+  &__row--on-err {
+    border-color: $danger;
   }
 
   &__input {
@@ -223,6 +235,7 @@ body {
     @include font(1.25rem, $regular);
     border: none;
     // padding: 1.7rem 1.7rem 1.7rem 2.5rem;
+    color: $secondary;
 
     @media screen and (min-width: $breakpoint) {
       @include font(1.25rem, $regular);
@@ -231,6 +244,10 @@ body {
       width: 100%;
       // height: 100%;
     }
+  }
+
+  &__input::placeholder {
+    color: $primary;
   }
 
   &__err-icon {
@@ -273,7 +290,7 @@ body {
     border-top-left-radius: 3rem;
     border-bottom-left-radius: 3rem;
 
-    background-color: purple;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 
     @media screen and (min-width: $breakpoint) {
       // border-radius: 3rem;
@@ -284,6 +301,12 @@ body {
 
   &__btn:hover {
     cursor: pointer;
+    background: linear-gradient(135deg, hsl(0deg 80% 86% / 50%), hsl(0deg 74% 74% / 50%));
+  }
+
+  &__btn:focus-visible {
+    cursor: pointer;
+    background: linear-gradient(135deg, hsl(0deg 80% 86% / 50%), hsl(0deg 74% 74% / 50%));
   }
 
   &__btn-img {
@@ -304,6 +327,8 @@ body {
     margin-left: 2rem;
 
     @include font(1.2rem, $regular);
+
+    color: $danger;
   }
 
   &__err-msg--on-err {
