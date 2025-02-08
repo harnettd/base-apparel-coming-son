@@ -14,16 +14,16 @@ const onErrModifier = "on-err";
 
 // HTML elements
 const form = document.getElementById("email-form");
-const input = document.querySelector("." + getBEClass(formBlock, inputElement));
-const errIcon = document.querySelector("." + getBEClass(formBlock, errIconElement));
-const errMessage = document.querySelector("." + getBEClass(formBlock, errMessageElement));
-const submitButton = document.querySelector("." + getBEClass(formBlock, buttonElement));
+const input = document.querySelector("." + BEM(formBlock, inputElement));
+const errIcon = document.querySelector("." + BEM(formBlock, errIconElement));
+const errMessage = document.querySelector("." + BEM(formBlock, errMessageElement));
+const submitButton = document.querySelector("." + BEM(formBlock, buttonElement));
 
 // On window load, clear email input and error indicators.
 window.addEventListener("load", (event) => {
   input.value = null;
-  errIcon.classList.remove(getBEMClass(formBlock, errIconElement, onErrModifier));
-  errMessage.classList.remove(getBEMClass(formBlock, errMessageElement, onErrModifier));
+  errIcon.classList.remove(BEM(formBlock, errIconElement, onErrModifier));
+  errMessage.classList.remove(BEM(formBlock, errMessageElement, onErrModifier));
 });
 
 // Return true if email is a valid email address; false otherwise.
@@ -38,8 +38,8 @@ form.addEventListener("submit", (event) => {
   if (isValidEmail(email)) {
     alert("Form data validated");
   } else {
-    errIcon.classList.add(getBEMClass(formBlock, errIconElement, onErrModifier));
-    errMessage.classList.add(getBEMClass(formBlock, errMessageElement, onErrModifier));
+    errIcon.classList.add(BEM(formBlock, errIconElement, onErrModifier));
+    errMessage.classList.add(BEM(formBlock, errMessageElement, onErrModifier));
     event.preventDefault();
   }
 });
