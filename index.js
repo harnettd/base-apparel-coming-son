@@ -6,6 +6,7 @@ const BEM = (block, element, modifier) => {
 
 // blocks, elements, and modifiers.
 const formBlock = "email-form";
+const rowElement = "row";
 const inputElement = "input";
 const errIconElement = "err-icon";
 const errMessageElement = "err-msg";
@@ -14,6 +15,7 @@ const onErrModifier = "on-err";
 
 // HTML elements
 const form = document.getElementById("email-form");
+const row = document.querySelector("." + BEM(formBlock, rowElement));
 const input = document.querySelector("." + BEM(formBlock, inputElement));
 const errIcon = document.querySelector("." + BEM(formBlock, errIconElement));
 const errMessage = document.querySelector("." + BEM(formBlock, errMessageElement));
@@ -38,6 +40,7 @@ form.addEventListener("submit", (event) => {
   if (isValidEmail(email)) {
     alert("Form data validated");
   } else {
+    row.classList.add(BEM(formBlock, rowElement, onErrModifier));
     errIcon.classList.add(BEM(formBlock, errIconElement, onErrModifier));
     errMessage.classList.add(BEM(formBlock, errMessageElement, onErrModifier));
     event.preventDefault();
