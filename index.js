@@ -21,11 +21,22 @@ const errIcon = document.querySelector("." + BEM(formBlock, errIconElement));
 const errMessage = document.querySelector("." + BEM(formBlock, errMessageElement));
 const submitButton = document.querySelector("." + BEM(formBlock, buttonElement));
 
+// Remove error modifer classes from the error icon and message.
+const removeErrModifiers = () => {
+  row.classList.remove(BEM(formBlock, rowElement, onErrModifier));
+  errIcon.classList.remove(BEM(formBlock, errIconElement, onErrModifier));
+  errMessage.classList.remove(BEM(formBlock, errMessageElement, onErrModifier));
+}
+
 // On window load, clear email input and error indicators.
 window.addEventListener("load", (event) => {
   input.value = null;
-  errIcon.classList.remove(BEM(formBlock, errIconElement, onErrModifier));
-  errMessage.classList.remove(BEM(formBlock, errMessageElement, onErrModifier));
+  removeErrModifiers();
+});
+
+// When the text input gets focus, remove all error modifiers.
+input.addEventListener("focus", (event) => {
+  removeErrModifiers();
 });
 
 // Return true if email is a valid email address; false otherwise.
