@@ -1,0 +1,29 @@
+// 1. Settings
+
+// Bootstrap breakpoints
+$x-small: 375px;
+$small: 592px;
+$medium: 768px;
+$large: 992px;
+$x-large: 1200px;
+$xx-large: 1400px;
+$breakpoint: $x-large;
+
+// Colors
+$primary: hsl(0deg 36% 70%);
+$secondary: hsl(0deg 6% 24%);
+$danger: hsl(0deg 93% 68%);
+
+// Font family and weights
+$font-stack: "Josefin Sans", sans-serif;
+$light: 300;
+$regular: 400;
+$semi-bold: 600;
+
+@mixin font($size, $weight) {
+    font: {
+      family: $font-stack;
+      size: $size;
+      weight: $weight;
+    }
+  }
